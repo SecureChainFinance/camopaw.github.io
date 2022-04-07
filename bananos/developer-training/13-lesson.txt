@@ -1,4 +1,0 @@
-This lesson is in how to move a file to and from
-
-/bananos/developer-training/13-lesson.txt
-
