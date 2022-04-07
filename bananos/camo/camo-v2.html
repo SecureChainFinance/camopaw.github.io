@@ -20,32 +20,32 @@
         <td>
           <h3>Encrypt A Value</h3>
           <p>
+            How many PAW does the source account have?<br>
+            Source Previous PAW: <input id="src_paw_amount" name="src_paw_amount" value="" size="64" type="number">
+          </p>
+          <p>
+            How many PAW does the destination account have?<br>
+            Destination Previous PAW: <input id="dest_paw_amount" name="dest_pas_amount" value="" size="64" type="number">
+          </p>
+          <p>
+            How many PAW do you want to send?<br>
+            Destination Next PAW: <input id="paw_tx_amount" name="paw_tx_amount" value="" size="64" type="number">
+          </p>
+          <p><input value="Encrypt Amounts" type="button" onclick='return encryptPaws();'>
+          </p>
+          <p>
             How many bananos does the source account have?<br>
-            Source Previous Bananos: <input id="src_ban_amount" name="src_ban_amount" value="" size="64" type="number">
-          </p>
-          <p>
-            How many bananos does the destination account have?<br>
-            Destination Previous Bananos: <input id="dest_ban_amount" name="dest_ban_amount" value="" size="64" type="number">
-          </p>
-          <p>
-            How many banano do you want to send?<br>
-            Destination Next Bananos: <input id="ban_tx_amount" name="ban_tx_amount" value="" size="64" type="number">
-          </p>
-          <p><input value="Encrypt Amounts" type="button" onclick='return encryptBananos();'>
-          </p>
-          <p>
-            How many bananos does the source account have?<br>
-            Encrypted Source Previous Bananos:
+            Encrypted Source Previous PAW:
             <input id="enc_src_prev_amount" name="enc_src_prev_amount" value="" size="64" type="number">
           </p>
           <p>
             How many bananos does the destination account have?<br>
-            Encrypted Destination Previous Bananos:
+            Encrypted Destination Previous PAW:
             <input id="enc_dest_prev_amount" name="enc_dest_prev_amount" value="" size="64" type="number">
           </p>
           <p>
             How many banano do you want to send?<br>
-            Encrypted Destination Next Bananos:
+            Encrypted Destination Next PAW:
             <input id="enc_dest_next_amount" name="enc_dest_next_amount" value="" size="64" type="number">
           </p>
           <p>
@@ -60,7 +60,7 @@
   <script src='camo.js'></script>
   <script src='../../js-lib/nacl.js'></script>
   <script src='../../js-lib/blake2b.js'></script>
-  <script src='../../js-lib/banano.js'></script>
+  <script src='../../js-lib/paw.js'></script>
   <script>
     const encrypt = (src_value, dest_elt) => {
       dest_elt.value = src_value;
@@ -81,22 +81,22 @@
       }
     }
 
-    const encryptBananos = () => {
-      const src_ban_amount_elt = document.getElementById('src_ban_amount');
-      const dest_ban_amount_elt = document.getElementById('dest_ban_amount');
-      const ban_tx_amount_elt = document.getElementById('ban_tx_amount');
+    const encryptPaws = () => {
+      const src_ban_amount_elt = document.getElementById('src_paw_amount');
+      const dest_ban_amount_elt = document.getElementById('dest_paw_amount');
+      const ban_tx_amount_elt = document.getElementById('paw_tx_amount');
       const enc_src_prev_amount_elt = document.getElementById('enc_src_prev_amount');
       const enc_dest_prev_amount_elt = document.getElementById('enc_dest_prev_amount');
       const enc_dest_next_amount_elt = document.getElementById('enc_dest_next_amount');
 
-      const src_ban_amount = parseInt(src_ban_amount_elt.value);
-      const dest_ban_amount = parseInt(dest_ban_amount_elt.value);
-      const ban_tx_amount = parseInt(ban_tx_amount_elt.value);
+      const src_paw_amount = parseInt(src_paw_amount_elt.value);
+      const dest_paw_amount = parseInt(dest_paw_amount_elt.value);
+      const paw_tx_amount = parseInt(paw_tx_amount_elt.value);
 
-      encrypt(src_ban_amount, enc_src_prev_amount_elt);
-      encrypt(dest_ban_amount, enc_dest_prev_amount_elt);
+      encrypt(src_paw_amount, enc_src_prev_amount_elt);
+      encrypt(dest_paw_amount, enc_dest_prev_amount_elt);
 
-      const dest_next_amount = dest_ban_amount + ban_tx_amount;
+      const dest_next_amount = dest_paw_amount + paw_tx_amount;
       encrypt(dest_next_amount, enc_dest_next_amount_elt);
 
       validate(enc_src_prev_amount_elt.value,
