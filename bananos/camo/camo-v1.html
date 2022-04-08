@@ -34,7 +34,7 @@
         <td>2</td>
         <td>
           <h3>Derive a Camo Account from the Seed (Private Key at index 0)</h3>
-          Banano Account:<br>
+          PAW Account:<br>
           <input id="paw_account" name="paw_account" value="" size="64" type="text">
           <p>
             Camo Account:<br>
@@ -51,7 +51,7 @@
           Use (your) Seed and somebody else's camo account.
           <br>
           (Somebody Else's) Camo Account
-          (From their rep field on their banano account):<br>
+          (From their rep field on their PAW account):<br>
           <input id="other_camo_account" name="other_camo_account" value="" size="64" type="text">
           <p>
             Shared Secret <br>
@@ -79,9 +79,9 @@
         const privateKey = getPrivateKey(seed, 0);
 
         // console.log('privateKey Get', privateKey.length, privateKey);
-        const bananoPublicKey = getPublicKey(privateKey);
-        const banano_account_elt = document.getElementById('paw_account');
-        banano_account_elt.value = getAccount(bananoPublicKey);
+        const pawPublicKey = getPublicKey(privateKey);
+        const paw_account_elt = document.getElementById('paw_account');
+        paw_account_elt.value = getAccount(pawPublicKey);
 
         const camoPublicKey = getCamoPublicKey(privateKey);
         // console.log('camoPublicKey', camoPublicKey.length, camoPublicKey);
