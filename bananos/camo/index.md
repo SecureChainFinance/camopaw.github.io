@@ -1,4 +1,4 @@
-#Camo Banano Example
+#Camo PAW Example
 
 Lets say I wanted to send private transaction from **paw_1camo** to **paw_3camo**
 
