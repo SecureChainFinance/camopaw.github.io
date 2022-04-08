@@ -44,7 +44,7 @@
             <input id="enc_dest_prev_amount" name="enc_dest_prev_amount" value="" size="64" type="number">
           </p>
           <p>
-            How many banano do you want to send?<br>
+            How many PAW do you want to send?<br>
             Encrypted Destination Next PAW:
             <input id="enc_dest_next_amount" name="enc_dest_next_amount" value="" size="64" type="number">
           </p>
@@ -71,12 +71,12 @@
       enc_notes_elt.value = new Date().toISOString() + '\n';
 
       // cannot send more than you have.
-      const ban_tx_amount = enc_dest_next_amount - enc_dest_prev_amount;
-      if (ban_tx_amount > enc_src_prev_amount) {
-        enc_notes_elt.value += `Error, cannot send '${ban_tx_amount}'` +
+      const paw_tx_amount = enc_dest_next_amount - enc_dest_prev_amount;
+      if (paw_tx_amount > enc_src_prev_amount) {
+        enc_notes_elt.value += `Error, cannot send '${paw_tx_amount}'` +
           ` as it is more than source '${enc_src_prev_amount}'.\n`;
       } else {
-        enc_notes_elt.value += `Check Passed, tx amount '${ban_tx_amount}'` +
+        enc_notes_elt.value += `Check Passed, tx amount '${paw_tx_amount}'` +
           ` is less than or equal to source amount '${enc_src_prev_amount}'.\n`;
       }
     }
