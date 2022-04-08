@@ -36,7 +36,7 @@ body {
 textarea {
   color: RGB(51, 67, 46);
   font-family: monospace, monospace;
-  background-color: olive;
+  background-color: #06c2b4;
   font-size: 12px;
 }
 
@@ -51,7 +51,7 @@ input[type=button] {
 
 input {
   text-shadow: none;
-  background-color: olive;
+  background-color: #06c2b4;
   font-family: Montserrat;
 }
 
