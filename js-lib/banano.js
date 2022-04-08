@@ -69,15 +69,15 @@ const stringToUint5 = (string) => {
 
 const getAccountPublicKey = (account) => {
   if (account === undefined) {
-    throw new Error(`Undefined BANANO Account`);
+    throw new Error(`Undefined PAW Account`);
   }
-  if (((!account.startsWith('ban_1')) && (!account.startsWith('ban_3'))) || (account.length !== 64)) {
-    throw new Error(`Invalid BANANO Account ${account}`);
+  if (((!account.startsWith('paw_1')) && (!account.startsWith('paw_3'))) || (account.length !== 64)) {
+    throw new Error(`Invalid PAW Account ${account}`);
   }
   const account_crop = account.substring(4, 64);
   const isValid = /^[13456789abcdefghijkmnopqrstuwxyz]+$/.test(account_crop);
   if (!isValid) {
-    throw new Error(`Invalid BANANO account ${account}`);
+    throw new Error(`Invalid PAW account ${account}`);
   }
 
   const key_uint4 = array_crop(uint5ToUint4(stringToUint5(account_crop.substring(0, 52))));
@@ -169,7 +169,7 @@ const getAccount = (publicKey) => {
   const checksum = uint5ToString(uint4ToUint5(uint8ToUint4(blake2b(keyBytes, null, 5).reverse())));
   const account = uint5ToString(uint4ToUint5(hexToUint4(`0${publicKey}`)));
 
-  return `ban_${account}${checksum}`;
+  return `paw_${account}${checksum}`;
 }
 
 const uint5ToString = (uint5) => {
