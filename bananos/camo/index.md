@@ -4,7 +4,7 @@ Lets say I wanted to send private transaction from **paw_1camo** to **paw_3camo*
 
 ### paw\_1camo
 Seed:    76AB90E5CF854B37150826125418FEA5DD1E34A7CA58E69F18008DC179612783  
-Account: ban_1camofhphjj7tyggff9ocb6shkm4ux9z3bf1achgtzyrpfufum16q9w8ryee  
+Account: paw_1camofhphjj7tyggff9ocb6shkm4ux9z3bf1achgtzyrpfufum16q9w8ryee  
 Monkey:  ![ban_1camo](ban_1camo.svg "monKey")
 
 ### paw\_3camo and ban\_1mixmkg
@@ -70,8 +70,8 @@ CAA880703A4E6610A53E0F7EA65AFE292DD8E7D7E97F85A21894B91DA7496FAA : ban_1hideez
 
 So all the world sees is three transactions from bananobet to ban\_3camo.
 
-ban\_3camo then move those funds to ban\_1mixmkg, securing them from being taken back by ban\_1camo, but never proving that ban\_3camo was involved in the transaction.  
-ban\_1camo knows that ban\_3camo moved the funds out of ban\_3camo into ban\_1mixmkg, because only ban\_1camo and ban\_3camo know the shared secret.  
+paw\_3camo then move those funds to paw\_1mixmkg, securing them from being taken back by paw\_1camo, but never proving that paw\_3camo was involved in the transaction.  
+paw\_1camo knows that paw\_3camo moved the funds out of paw\_3camo into paw\_1mixmkg, because only paw\_1camo and paw\_3camo know the shared secret.  
 
 
 From:  ![ban_1hideez.svg](ban_1hideez.svg "monKey")
